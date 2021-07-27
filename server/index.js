@@ -21,7 +21,7 @@ app.use('/injections', injectionsRoute);
 app.use('/vaccine', vaccineRoute);
 app.use('/dash', dashRoute);
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
 const server = app.listen(PORT, () => {
   console.log('\x1b[32m','Server running on port:' + '\x1b[36m', PORT);
 });

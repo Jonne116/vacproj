@@ -1,7 +1,11 @@
 const express = require('express');
-const { getDash } = require('../controllers/dashController');
+const { getDash, getUsed, getExpired, getGoingExpire } = require('../controllers/dashController');
 const router = express.Router();
+const { formatDate } = require('../middleware/formatdate');
 
-router.get('/:date', getDash);
+router.get('/:date', formatDate, getDash);
+router.get('/bottles/:date', formatDate, getUsed);
+router.get('/exp/:date', formatDate, getExpired);
+router.get('/goingexp/:date', formatDate, getGoingExpire);
 
 module.exports = router;

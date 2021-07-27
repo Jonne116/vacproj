@@ -12,7 +12,7 @@ module.exports = {
     proxy: [
       {
         context: ['/vaccine', '/injections'],
-        target: 'http://localhost:3001',
+        target: 'http://localhost:3002',
       }]
   },
   module: {
