@@ -1,10 +1,9 @@
-const Injections = require('../models/injections.js');
+const Injections = require('../models/injections');
 
 const getInjections = async (req, res) => {
-  const time = new Date(req.params.time);
-  console.log(time);
+ 
   try{
-    const injecData = await Injections.find({ vaccinationDate: { $gte: time }});
+    const injecData = await Injections.find({});
     res.status(200).json(injecData);
 
   }

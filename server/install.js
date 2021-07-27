@@ -1,5 +1,5 @@
 const fs = require('fs');
-const mongo = require('./mongoConn.js');
+const mongo = require('./mongoConn');
 const Injections = require('./models/injections');
 const Vaccine = require('./models/vaccine');
 

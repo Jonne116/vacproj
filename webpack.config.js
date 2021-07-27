@@ -8,7 +8,12 @@ module.exports = {
   },
   devServer: {
     port: 3003,
-    watchContentBase: true
+    watchContentBase: true,
+    proxy: [
+      {
+        context: ['/vaccine', '/injections'],
+        target: 'http://localhost:3001',
+      }]
   },
   module: {
     rules: [
@@ -21,7 +26,7 @@ module.exports = {
           options: {
             presets: [
               ['@babel/preset-env', {
-                'targets': 'defaults' 
+                'targets': { 'esmodules': true }
               }],
               '@babel/preset-react'
             ]
