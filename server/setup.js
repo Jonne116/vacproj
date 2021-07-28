@@ -11,6 +11,16 @@ const Vaccine = require('./models/vaccine');
     if (err) {
       console.log(err);
     }
+
+    try{
+      await Injections.deleteMany({});
+      await Vaccine.deleteMany({});
+      console.log('\x1b[33m', 'Clearing collections...');
+    }
+    catch(err) {
+      console.log('\x1b[31m', 'Failed to clear collections');
+    }
+   
    
     for (let element of files) {
 

@@ -4,7 +4,7 @@
   "description": "Solita tehtävä",
   "main": "index.js",
   "scripts": {
-    "setup": "node ./server/install.js && npm run build && npm run test",
+    "setup": "node ./server/setup.js && npm run build && npm run test",
     "start": "node ./server/index.js",
     "client": "webpack serve --mode=development --devtool inline-source-map --hot",
     "server": "nodemon --signal SIGHUP ./server/index.js",
