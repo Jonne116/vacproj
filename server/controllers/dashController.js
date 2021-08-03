@@ -5,6 +5,7 @@ const { daysAdd, daysRemove } = require('../util/datehandler');
 
 const getDash = async (req, res) => {
   let dashData = {};
+
   try{
     const vacci = await Vaccine.aggregate(
       [
@@ -31,7 +32,7 @@ const getDash = async (req, res) => {
         }
       ]
     );
-    dashData = {vacci, injected};
+    dashData = [vacci, injected];
     res.status(200).json(dashData);
   }
   catch(err) {
@@ -64,7 +65,7 @@ const getUsed = async(req, res) => {
 
 const getExpired = async (req, res) => {
   const days30 = daysRemove(req.params.date, 30);
-  console.log(days30);
+  
   try {
     const expired = await Vaccine.aggregate(
       [
@@ -80,7 +81,6 @@ const getExpired = async (req, res) => {
         }
       ]
     );
-    console.log(expired);
     res.status(200).json(expired);
   }
   catch(err) {

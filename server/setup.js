@@ -6,7 +6,7 @@ const Vaccine = require('./models/vaccine');
 
 (function(){ 
   
-  fs.readdir('./server/testdata', async (err, files) => {
+  fs.readdir('./server/solitadata', async (err, files) => {
 
     if (err) {
       console.log(err);
@@ -25,7 +25,7 @@ const Vaccine = require('./models/vaccine');
     for (let element of files) {
 
       try{
-        const data = fs.readFileSync(`./server/testdata/${element}`, 'utf8');
+        const data = fs.readFileSync(`./server/solitadata/${element}`, 'utf8');
      
         const splitted = data.toString().split('\n');
         const mapped = splitted.map(element => {

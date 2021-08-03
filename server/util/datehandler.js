@@ -1,10 +1,10 @@
 const daysRemove = (date, days) => {
-  const result = new Date(date - days*86400000);
+  const result = new Date(Date.parse(date) - days*86400000);
   return result;
 };
 
 const daysAdd = (date, days) => {
-  const result = new Date(date + days*86400000);
+  const result = new Date(Date.parse(date) + days*86400000);
   return result;
 };
 

@@ -11,7 +11,7 @@ module.exports = {
     watchContentBase: true,
     proxy: [
       {
-        context: ['/vaccine', '/injections'],
+        context: ['/vaccine', '/injections', '/dash'],
         target: 'http://localhost:3002',
       }]
   },
@@ -34,7 +34,7 @@ module.exports = {
         }]
       },
       {
-        test: /\.scss$/,
+        test: /\.css$/,       
         use: [
           'style-loader',
           'css-loader'
