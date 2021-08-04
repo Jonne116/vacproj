@@ -27,7 +27,7 @@ const MassData = ({dashData, bottles, expired}) => {
         <thead>
           <tr>
             <th>Expired bottles</th>
-            <th>Expired injections</th>            
+            <th>Expired vaccines</th>            
           </tr>
         </thead>
         <tbody>
@@ -41,7 +41,7 @@ const MassData = ({dashData, bottles, expired}) => {
           <tr>
             <th>Injections used</th>
             <th>Amount of orders</th>
-            <th>Total injections</th>         
+            <th>Amount of vaccines</th>         
           </tr>
         </thead>
         <tbody>

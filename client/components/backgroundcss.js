@@ -4,14 +4,7 @@ const BackgroundCss = () => {
   return(
     <div id="X">
       <div className="postition" id="A">
-      </div>
-      <div className="postition" id="B">
-      </div>
-      <div className="postition" id="C">
-      </div>
-      <div className="postition" id="D">
-      </div>
-      
+      </div>     
       <div className="postition" id="F">
       </div>
       <div className="postition" id="E">

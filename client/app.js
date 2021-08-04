@@ -22,10 +22,7 @@ const App = () => {
     setDashData(dash);
     setExpired(vaccinesExpired);
     setGoingE(going);
-     
   }, [searchDate, setDashData, setBottles, setExpired, setGoingE]);
-    
-  
 
   return(
     <div className="wide">
@@ -33,7 +30,7 @@ const App = () => {
       <h1>Vaccines</h1>
       <SearchField searchDate={searchDate} setSearchDate={setSearchDate}/>
       <div className="dataWrap">
-        <DataPanel dashData={dashData} expired={expired}/>
+        <DataPanel dashData={dashData} expired={expired} goingE={goingE}/>
         <MassData dashData={dashData} bottles={bottles} expired={expired}/>
       </div>
     </div>

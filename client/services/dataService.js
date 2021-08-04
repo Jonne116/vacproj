@@ -7,6 +7,7 @@ const getDash = async (date) => {
   }
   catch(err) {
     console.log(err);
+    return [];
   }
 };
 
@@ -17,6 +18,7 @@ const getBottles = async (date) => {
   }
   catch(err) {
     console.log(err);
+    return [];
   }
 };
 
@@ -27,6 +29,7 @@ const getExpired = async (date) => {
   }
   catch(err) {
     console.log(err);
+    return [];
   }
 };
 
@@ -37,6 +40,7 @@ const getGoingExp = async (date) => {
   }
   catch(err) {
     console.log(err);
+    return [];
   }
 };
 
@@ -47,6 +51,7 @@ const getVaccines = async() => {
   }
   catch(err) {
     console.log(err);
+    return [];
   }
 };
 
@@ -57,6 +62,7 @@ const getInjections = async () => {
   }
   catch(err) {
     console.log(err);
+    return [];
   }
 };
 

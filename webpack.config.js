@@ -2,6 +2,9 @@ const path = require('path');
 require('dotenv').config();
 
 module.exports = {
+  performance : {
+    hints : false
+  },        
   entry: path.resolve(__dirname, 'client', 'index.js'),
   output: {
     path: path.resolve(__dirname, 'server/static'),
@@ -35,7 +38,7 @@ module.exports = {
         }]
       },
       {
-        test: /\.css$/,       
+        test: /\.css$/,   
         use: [
           'style-loader',
           'css-loader'

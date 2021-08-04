@@ -4,8 +4,9 @@
   "description": "Solita 2021",
   "main": "index.js",
   "scripts": {
-    "setup": "npm install && node ./server/setup.js && npm run build && npm run test",
+    "setup": "npm install && npm run populdb && npm run build && npm run test",
     "start": "node ./server/index.js",
+    "populdb": "node ./server/setup.js",
     "client": "webpack serve --mode=development --devtool inline-source-map --hot",
     "server": "nodemon --signal SIGHUP ./server/index.js",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
