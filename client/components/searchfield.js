@@ -6,12 +6,14 @@ const SearchField = ({searchDate, setSearchDate}) => {
   const offSet = new Date();
  
   return(
-    <div>
+    <div className="wide">
       <DateTimePicker
         onChange={setSearchDate}
         value={searchDate}
         disableClock={true}
         maxDetail="second"
+        clearIcon={null}
+        className="datePick"
       />
       <h5>{offSet.getTimezoneOffset() !== 0 ? `Browser timezone ${-offSet.getTimezoneOffset()/60} hour(s) from UTC±0` : null}</h5>
       

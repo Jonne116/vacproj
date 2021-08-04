@@ -27,23 +27,31 @@ const MassData = ({dashData, bottles, expired}) => {
         <thead>
           <tr>
             <th>Expired bottles</th>
-            <th>Injections used</th>
-            <th>Amount of orders</th>
-            <th>Total injections</th>
             <th>Expired injections</th>            
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>{bottlesExpired}</td>
-            <td>{injectionsExpire}</td>
-            <td>{totalOrders}</td>
-            <td>{totalInjections}</td>
             <td>{expiredInjections}</td>
           </tr>
         </tbody>
+      </table><table>
+        <thead>
+          <tr>
+            <th>Injections used</th>
+            <th>Amount of orders</th>
+            <th>Total injections</th>         
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{injectionsExpire}</td>
+            <td>{totalOrders}</td>
+            <td>{totalInjections}</td>
+          </tr>
+        </tbody>
       </table>
-      
     </div>
   );
 

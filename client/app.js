@@ -3,6 +3,7 @@ import DataPanel from './components/dataPanel';
 import SearchField from './components/searchfield';
 import { getDash, getBottles, getExpired, getGoingExp } from './services/dataService';
 import MassData from './components/massData';
+import BackgroundCss from './components/backgroundcss';
 
 const App = () => {
   const day = new Date('2021-04-12T11:10:06.473587Z');
@@ -27,11 +28,14 @@ const App = () => {
   
 
   return(
-    <div>
+    <div className="wide">
+      <BackgroundCss />
       <h1>Vaccines</h1>
       <SearchField searchDate={searchDate} setSearchDate={setSearchDate}/>
-      <DataPanel dashData={dashData} expired={expired}/>
-      <MassData dashData={dashData} bottles={bottles} expired={expired}/>
+      <div className="dataWrap">
+        <DataPanel dashData={dashData} expired={expired}/>
+        <MassData dashData={dashData} bottles={bottles} expired={expired}/>
+      </div>
     </div>
   );
 

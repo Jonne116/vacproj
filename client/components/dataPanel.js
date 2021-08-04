@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const DataPanel = ({dashData, expired}) => {
     
   const [vaccines, injections] = dashData;
-    
+  
   return(
     <div>
       <table>
@@ -22,6 +22,26 @@ const DataPanel = ({dashData, expired}) => {
                 <td>{element['_id'].vaccine}</td>
                 <td>{element.orders}</td>
                 <td>{element.injections}</td>
+              </tr>
+            );
+          }) : null}
+        </tbody>
+      </table>
+      <table>
+        <thead>
+          <tr>
+            <th>Vaccine</th>
+            <th>Orders Expired</th>
+            <th>Injections Expired</th>
+          </tr>
+        </thead>
+        <tbody>
+          {expired ? expired.map(element => {
+            return( 
+              <tr key={element['_id'].vaccine}>
+                <td>{element['_id'].vaccine}</td>
+                <td>{element.ordersExpired}</td>
+                <td>{element.injectionsExpired}</td>
               </tr>
             );
           }) : null}

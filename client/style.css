@@ -1,3 +1,209 @@
+body { 
+  width: 100%; 
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  background: whitesmoke;
+}
+
+.wide {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 .capi {
   text-transform: capitalize;
+}
+
+.dataWrap {
+  display: flex;
+  flex-flow: row wrap;
+
+}
+
+td, th {
+  padding: 0.3rem;
+}
+
+table {
+  background: rgba(211, 239, 255, 0.65);
+  padding: 1rem;
+  border-radius: 0.3rem;
+  box-shadow: 0.2rem 0.2rem 0.5rem 0.1rem rgba(0, 0, 0, 0.1);
+  margin: 3rem;
+}
+
+.react-datetime-picker .react-datetime-picker__wrapper {
+  background: rgba(211, 239, 255, 0.65);
+  border: none;
+  padding: 0.2rem;
+  border-radius: 0.2rem;
+  box-shadow: 0.2rem 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.11);
+}
+
+.react-datetime-picker .react-datetime-picker__wrapper :hover {
+  background: rgba(245, 251, 255, 0.952);
+}
+
+
+.postition {
+  position: absolute;
+  z-index: -1;
+  width: 0;
+  height: 0;
+  background-color: rgb(154, 223, 255);
+  border-radius: 50%;
+  animation-duration: 10s;
+  animation-fill-mode: forwards;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg); 
+  -o-transform: rotate(45deg);
+}
+
+#X  {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  margin: 0;
+}
+
+#A {
+  animation-name: needle;
+}
+
+#I {
+  animation-name: base;
+
+}
+
+#H {
+  animation-name: tip;
+}
+
+#G {
+  animation-name: mesure;
+  background: transparent;
+}
+
+#F {
+  animation-name: push;
+  background: rgb(227, 245, 255);
+  border: solid rgb(241, 250, 255) 0rem;
+}
+
+#E {
+  animation-name: button;
+  background: rgb(227, 245, 255);
+  border-top: solid rgb(241, 250, 255) 0rem;
+  border-right: solid rgb(241, 250, 255) 0rem;
+}
+
+@keyframes button {
+  59% {
+    margin:0;
+  }
+  to{
+    border-right: solid rgb(241, 250, 255) 2rem;
+    border-radius: 0.2rem 0.2rem 1rem 1rem;
+    margin-bottom: 35rem;
+    margin-left: 35rem;
+    width: 4rem;
+    height: 1.5rem;
+    box-shadow: 0.5rem 0.5rem 0.5rem 0.5rem rgba(128, 128, 128, 0.164);
+  }
+}
+
+@keyframes push {
+  66% {
+    margin:0;
+  }
+  to{
+    border: solid rgb(241, 250, 255) 1rem;
+    border-radius: 0;
+    margin-bottom: 20rem;
+    margin-left: 20rem;
+    width: 1rem;
+    height: 20rem;
+    box-shadow: 0.5rem 0.5rem 0.5rem 0.5rem rgba(128, 128, 128, 0.164);
+  }
+}
+
+@keyframes mesure {
+  30% {
+    margin-top: 0rem;
+    height:3rem;
+  }
+  60% {
+    border: none;
+    
+  }
+
+  to {
+    border-radius: 0;
+    width: 2rem;
+    height: 15rem;
+    border-left: dashed black 0.5rem;
+    border-top: solid black 0.5rem;
+    border-bottom: solid black 0.5rem;
+    margin-top: 13rem;
+    margin-right: 2.5rem;
+  }
+}
+
+@keyframes needle {
+  20% {
+    width: 0.5rem;
+  }
+  70% {
+    margin:0;
+  }
+ 
+  to {
+    background-color: dimgray;
+    width: 0.2rem;
+    height: 20rem;
+    margin-top: 33rem;
+    margin-right: 33rem;
+    box-shadow: dimgray 2 2 2;
+    border-radius: 2rem 0 0 0 0;
+  }
+}
+@keyframes base {
+  from {
+    border-top: rgb(227, 245, 255) solid 1rem;
+  }
+  to {
+    
+    border-radius: 0.5rem;
+    border-top: rgb(227, 245, 255) solid 10rem;
+    height: 20rem;
+    width: 10rem;
+    box-shadow: 0.5rem 0.5rem 0.5rem 0.5rem rgba(128, 128, 128, 0.164);
+  }
+}
+
+@keyframes tip {
+  5% {
+    margin:0;
+  }
+  70% {
+    margin:0;
+  }
+  to {
+    border-radius: 0 0 0.5rem 0.5rem;
+    border-top: solid rgb(182, 232, 255) 0.5rem;
+    height: 1rem;
+    width: 5rem;
+    margin-top: 22rem;
+    margin-right: 22rem;
+    box-shadow: 0rem 0.2rem 0.2rem 0.2rem rgba(128, 128, 128, 0.164);
+  }
 }

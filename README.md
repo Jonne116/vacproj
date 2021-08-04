@@ -10,7 +10,7 @@
 <code>db.createUser(
    {
      user: "vaccineuser",
-     pwd: "password",
+     pwd: passwordPrompt(),
      roles: [ "readWrite", "dbAdmin" ]
    }
 )
@@ -20,7 +20,8 @@
 <li>Create <code>.env</code> file to project root directory</li>
 <li>Write enviroment variables to <code>.env</code> file: </br>
 <code>
-MONGO_URI=mongodb://rokotus:rokotus@localhost:27017/rokotus?retryWrites=true&w=majority </code></br>
+MONGO_URI=mongodb://username:password@host:port/database?retryWrites=true&w=majority </code></br>
+<em>Replace username, password, host, port and database</em></br>
 <code>PORT=3002</code><em>(Optional node port, defaults to 3002)</em></br>
 <code>PORT_WEBPACK=2003</code><em>(Optional webpack dev-server port, defaults to 3003)</em></br>
 <li>In project folder, run command:</br> 
