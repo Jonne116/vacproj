@@ -12,7 +12,7 @@ const DataPanel = ({dashData, expired}) => {
           <tr>
             <th>Vaccine</th>
             <th>Orders</th>
-            <th>injections</th>
+            <th>Injections</th>
           </tr>
         </thead>
         <tbody>

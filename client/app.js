@@ -28,7 +28,7 @@ const App = () => {
 
   return(
     <div>
-      <h1>Rokotustietokanta</h1>
+      <h1>Vaccines</h1>
       <SearchField searchDate={searchDate} setSearchDate={setSearchDate}/>
       <DataPanel dashData={dashData} expired={expired}/>
       <MassData dashData={dashData} bottles={bottles} expired={expired}/>

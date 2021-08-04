@@ -1,4 +1,5 @@
 const path = require('path');
+require('dotenv').config();
 
 module.exports = {
   entry: path.resolve(__dirname, 'client', 'index.js'),
@@ -7,12 +8,12 @@ module.exports = {
     filename: 'bundle.js'
   },
   devServer: {
-    port: 3003,
+    port: process.env.PORT_WEBPACK || 3003,
     watchContentBase: true,
     proxy: [
       {
-        context: ['/vaccine', '/injections', '/dash'],
-        target: 'http://localhost:3002',
+        context: ['/dash'],
+        target: `http://localhost:${process.env.PORT || 3002}`,
       }]
   },
   module: {
