@@ -1,4 +1,4 @@
-const {daysAdd, daysRemove} = require('./datehandler');
+const {daysAdd, daysRemove} = require('../util/datehandler');
 
 describe('Date functions', () => {
 

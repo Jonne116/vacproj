@@ -3,7 +3,7 @@ const Vaccine = require('../models/vaccine');
 const { daysAdd, daysRemove } = require('../util/datehandler');
 
 
-const getDash = async (req, res) => {
+const getDash = async ( req, res) => {
   let dashData = {};
 
   try{
@@ -108,6 +108,7 @@ const getGoingExpire = async (req, res) => {
         }
       ]
     );
+   
     res.status(200).json(goingExp);
   }
   catch(err) {
@@ -116,5 +117,42 @@ const getGoingExpire = async (req, res) => {
   }
 };
 
+const getExpiredBeforeUse = async (req, res) => {
+  const days30 = daysRemove(req.params.date, 30);
+  try {
+    let bottles = await Vaccine.find({arrived: {$lte: days30}});
+        
+    const sourceBottles = await Injections.aggregate(
+      [
+        {$match: {vaccinationDate: {$lte: req.params.date}}},
+        {
+          $group:
+          {
+            _id: '$sourceBottle',
+            injections: { $sum: 1 },
+                  
+          }
+        }
+      ]
+    );
+    let expInj = 0;
+    for (let i=0; i<bottles.length; i++) {
+      let expvac = bottles[i].injections;
+      for (let j=0; j<sourceBottles.length; j++) {
+        if (sourceBottles[j]['_id'] === bottles[i].id) {
+          expvac = expvac - sourceBottles[j].injections;
+        }
+      }
+      expInj = expInj + expvac;
+    }
+    const result = {expiredInjections: expInj};
+    res.status(200).json(result);
+  }
+  catch(err) {
+    console.log(err);
+    res.status(500).end();
+  }
+};
 
-module.exports = { getDash, getUsed, getExpired, getGoingExpire };
+
+module.exports = { getDash, getUsed, getExpired, getGoingExpire, getExpiredBeforeUse };

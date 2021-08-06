@@ -6,7 +6,7 @@ const DataPanel = ({dashData, expired, goingE}) => {
   const [vaccines, injections] = dashData;
   
   return(
-    <div>
+    <div className="dataWrap">
       <table>
         <thead>
           <tr>
@@ -86,10 +86,8 @@ const DataPanel = ({dashData, expired, goingE}) => {
         </tbody>
       </table>
     </div>
-  );
-    
+  ); 
 };
-
 
 DataPanel.propTypes = {
   dashData: PropTypes.array.isRequired,

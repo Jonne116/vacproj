@@ -44,26 +44,15 @@ const getGoingExp = async (date) => {
   }
 };
 
-const getVaccines = async() => {
+const getExpiredBefore = async (date) => {
   try {
-    const response = await axios.get('/vaccine');
+    const response = await axios.get('/dash/expbefore/' + date.toISOString());
     return response.data;
   }
   catch(err) {
     console.log(err);
-    return [];
+    return {};
   }
 };
 
-const getInjections = async () => {
-  try {
-    const response = await axios.get('/injections');
-    return response.data;
-  }
-  catch(err) {
-    console.log(err);
-    return [];
-  }
-};
-
-export { getVaccines, getInjections, getDash, getBottles, getExpired, getGoingExp };
+export { getDash, getBottles, getExpired, getGoingExp, getExpiredBefore };

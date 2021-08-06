@@ -20,7 +20,11 @@ body {
 .dataWrap {
   display: flex;
   flex-flow: row wrap;
+}
 
+.datacont {
+  display: flex;
+  flex-flow: row wrap-reverse;
 }
 
 td, th {
@@ -33,6 +37,16 @@ table {
   border-radius: 0.3rem;
   box-shadow: 0.2rem 0.2rem 0.5rem 0.1rem rgba(0, 0, 0, 0.1);
   margin: 3rem;
+}
+
+#load {
+  border-radius: 50%;
+  border: rgba(121, 91, 255, 0) solid 0.1rem;
+  border-top-color: rgb(46, 178, 255);
+  width: 5rem;
+  height: 5rem;
+  background:transparent;
+  animation: spinner .6s linear infinite;;
 }
 
 .react-datetime-picker .react-datetime-picker__wrapper {
@@ -104,6 +118,16 @@ table {
   background: rgb(227, 245, 255);
   border-top: solid rgb(241, 250, 255) 0rem;
   border-right: solid rgb(241, 250, 255) 0rem;
+}
+
+@keyframes spinner {
+  to{
+  transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg); 
+  -o-transform: rotate(360deg);
+  }
 }
 
 @keyframes button {

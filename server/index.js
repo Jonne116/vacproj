@@ -1,21 +1,7 @@
-const express = require('express');
-const app = express();
-const morgan = require('morgan');
-const cors = require('cors');
+const app = require('./app');
 require('dotenv').config();
-const mongo = require('./mongoConn');
-const dashRoute = require('./routes/dashRoute');
+const {mongoClose} = require('./mongoConn');
 
-morgan.token('body', (req) => { 
-  return JSON.stringify(req.body);
-});
-
-app.use(cors());  
-app.use(express.json());
-app.use(morgan(':method :url :status :res[content-length] - :response-time ms :body'));
-
-app.use('/', express.static(`${ __dirname }/static`));
-app.use('/dash', dashRoute);
 
 const PORT = process.env.PORT || 3002;
 const server = app.listen(PORT, () => {
@@ -24,6 +10,6 @@ const server = app.listen(PORT, () => {
 
 process.once('SIGHUP', function () {
   console.log('\x1b[33m', 'Closing...');
-  mongo.mongoClose;
+  mongoClose;
   server.close();
 });

@@ -16,11 +16,8 @@ const SearchField = ({searchDate, setSearchDate}) => {
         className="datePick"
       />
       <h5>{offSet.getTimezoneOffset() !== 0 ? `Browser timezone ${-offSet.getTimezoneOffset()/60} hour(s) from UTC±0` : null}</h5>
-      
-
     </div>
   );
-
 };
 
 SearchField.propTypes = {
