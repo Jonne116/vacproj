@@ -1,12 +1,6 @@
 # Vaccine
 
 Solita dev academy exercise 2021
-* React
-* Node
-* Express
-* Webpack
-* MongoDB
-* Jest
 
 ## Installation
 

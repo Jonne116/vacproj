@@ -26,11 +26,6 @@ describe('GET requests with valid date', () =>{
     expect(res.statusCode).toEqual(200);
   });
 
-  it('/dash/expbefore/2021-04-12T11:10:06.473587Z returns status: 200', async () => {
-    const res = await request(app).get('/dash/expbefore/2021-04-12T11:10:06.473587Z');
-    expect(res.statusCode).toEqual(200);
-  });
-
 });
 
 describe('GET requests with invalid parameter', () =>{
@@ -52,11 +47,6 @@ describe('GET requests with invalid parameter', () =>{
 
   it('/dash/goingexp/huuhaa  returns status: 500', async () => {
     const res = await request(app).get('/dash/goingexp/huuhaa');
-    expect(res.statusCode).toEqual(500);
-  });
-
-  it('/dash/expbefore/huuhaa  returns status: 500', async () => {
-    const res = await request(app).get('/dash/expbefore/huuhaa');
     expect(res.statusCode).toEqual(500);
   });
 
