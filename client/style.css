@@ -72,10 +72,6 @@ table {
   animation-duration: 10s;
   animation-fill-mode: forwards;
   transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg); 
-  -o-transform: rotate(45deg);
 }
 
 #X  {
@@ -123,10 +119,6 @@ table {
 @keyframes spinner {
   to{
   transform: rotate(360deg);
-  -webkit-transform: rotate(360deg);
-  -moz-transform: rotate(360deg);
-  -ms-transform: rotate(360deg); 
-  -o-transform: rotate(360deg);
   }
 }
 
